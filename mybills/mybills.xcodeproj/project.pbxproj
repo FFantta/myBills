@@ -12,6 +12,9 @@
 		B28F26652C6A5FA1000E00FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28F26642C6A5FA1000E00FE /* Assets.xcassets */; };
 		B28F26682C6A5FA1000E00FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28F26672C6A5FA1000E00FE /* Preview Assets.xcassets */; };
 		B28F26702C6BA159000E00FE /* CustomTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F266F2C6BA159000E00FE /* CustomTabbarView.swift */; };
+		B2CF45FF2C73B3D90025C6F6 /* transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF45FE2C73B3D90025C6F6 /* transaction.swift */; };
+		B2CF46142C73B78E0025C6F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF46132C73B78E0025C6F6 /* HomeView.swift */; };
+		B2CF46182C74ED410025C6F6 /* EditTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF46172C74ED410025C6F6 /* EditTransactionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		B28F26642C6A5FA1000E00FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B28F26672C6A5FA1000E00FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B28F266F2C6BA159000E00FE /* CustomTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarView.swift; sourceTree = "<group>"; };
+		B2CF45FE2C73B3D90025C6F6 /* transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transaction.swift; sourceTree = "<group>"; };
+		B2CF46132C73B78E0025C6F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B2CF46172C74ED410025C6F6 /* EditTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +59,14 @@
 		B28F265F2C6A5F9D000E00FE /* mybills */ = {
 			isa = PBXGroup;
 			children = (
+				B2CF46132C73B78E0025C6F6 /* HomeView.swift */,
 				B28F26602C6A5F9D000E00FE /* mybillsApp.swift */,
 				B28F26622C6A5F9D000E00FE /* ContentView.swift */,
 				B28F266E2C6BA0FD000E00FE /* CustomTabbar */,
 				B28F26642C6A5FA1000E00FE /* Assets.xcassets */,
 				B28F26662C6A5FA1000E00FE /* Preview Content */,
+				B2CF45FE2C73B3D90025C6F6 /* transaction.swift */,
+				B2CF46172C74ED410025C6F6 /* EditTransactionView.swift */,
 			);
 			path = mybills;
 			sourceTree = "<group>";
@@ -150,7 +159,10 @@
 			files = (
 				B28F26702C6BA159000E00FE /* CustomTabbarView.swift in Sources */,
 				B28F26632C6A5F9D000E00FE /* ContentView.swift in Sources */,
+				B2CF45FF2C73B3D90025C6F6 /* transaction.swift in Sources */,
+				B2CF46142C73B78E0025C6F6 /* HomeView.swift in Sources */,
 				B28F26612C6A5F9D000E00FE /* mybillsApp.swift in Sources */,
+				B2CF46182C74ED410025C6F6 /* EditTransactionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

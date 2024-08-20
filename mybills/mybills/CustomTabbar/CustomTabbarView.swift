@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 enum CustomTabbar: String, CaseIterable {
     
@@ -70,7 +71,7 @@ struct CustomTabbarView: View {
             Canvas { context, size in
                 
                 let width = size.width
-                let heigh = size.height
+                _ = size.height
                 let midWidth = width * 0.5
                 
                 context.fill(Path { path in

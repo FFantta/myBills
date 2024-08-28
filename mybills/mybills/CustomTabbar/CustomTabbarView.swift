@@ -10,9 +10,9 @@ enum CustomTabbar: String, CaseIterable {
         
         switch self {
         case .home:
-            return "house.fill"
+            return "house"
         case .analysis:
-            return "chart.bar.fill"
+            return "chart.bar"
         }
     }
     
@@ -21,7 +21,7 @@ enum CustomTabbar: String, CaseIterable {
     }
     
     var selIconName: String {
-        return iconName
+        return iconName + ".fill"
     }
 }
 
@@ -41,7 +41,8 @@ struct CustomTabbarView: View {
                     currTab = item
                 } label: {
                     VStack {
-                        Image(systemName: item.norIconName)
+                        Image(systemName: currTab == item ? item.selIconName : item.norIconName)
+                            .foregroundStyle(currTab == item ? Color.blue : Color.gray)
                         Text(item.rawValue)
                             .font(.system(size: 12, weight: .bold))
                             .foregroundStyle(Color.black.opacity(currTab == item ? 0.7 : 0.3))
@@ -63,10 +64,6 @@ struct CustomTabbarView: View {
             }
         }
         .padding(.top, 20)
-//        .padding(.bottom, safeEdgeInsets.bottom == 0 ? 10 : safeEdgeInsets.bottom)
-//        .padding(.bottom, 10)
-        
-//        .background(Color.green)
         .background(
             Canvas { context, size in
                 
@@ -88,7 +85,7 @@ struct CustomTabbarView: View {
                     path.addLine(to: CGPoint(x: size.width, y: size.height))
                     path.addLine(to: CGPoint(x: 0, y: size.height))
                     
-                }, with: .color(.white))
+                }, with: .color(Color(red: 244/255, green: 240/255, blue: 242/255)))
             }
         )
     }

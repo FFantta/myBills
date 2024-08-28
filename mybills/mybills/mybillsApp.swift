@@ -12,7 +12,8 @@ import SwiftData
 struct mybillsApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+//            HomeView()
+            ContentView()
         }
         .modelContainer(for: Transaction.self)
     }

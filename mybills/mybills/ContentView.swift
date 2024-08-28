@@ -10,13 +10,18 @@ struct ContentView: View {
             
             ZStack(alignment: .bottom) {
                 TabView(selection: $currTab) {
-                    ForEach(CustomTabbar.allCases, id: \.rawValue) { item in
-                        Text(item.rawValue)
-                            .tag(item)
-                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
-                            .background(Color.gray)
-                    }
+                    // Replace the Text views with your actual views
+                    Home() // Home page
+                        .tag(CustomTabbar.home)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color.white)
+                    
+                    Analysis() // Analysis page
+                        .tag(CustomTabbar.analysis)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color.white)
                 }
+                
                 
                 CustomTabbarView(safeEdgeInsets: proxy.safeAreaInsets, currTab: $currTab)
             }

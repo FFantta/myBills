@@ -14,6 +14,7 @@ struct Home: View {
             let size = $0.size
             
             NavigationStack {
+                
                 ScrollView(.vertical) {
                     LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
                         Section {

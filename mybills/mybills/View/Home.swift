@@ -21,8 +21,10 @@ struct Home: View {
                             
                             CardView(income: 4039, expense: 2389)
                             
-                            ForEach(sampleTransactions) { transaction in
-                                TransactionCardView(transaction: transaction)
+                            ForEach(Array(groupTransactionsByDate().keys.sorted()), id: \.self) { date in
+                                VStack(alignment: .leading) {
+                                    DayTransactionsView(dayTransactions: groupTransactionsByDate()[date] ?? [])
+                                }
                             }
                             
                         } header: {
@@ -35,6 +37,10 @@ struct Home: View {
             }
         }
     }
+    
+    func groupTransactionsByDate() -> [String: [Transaction]] {
+            Dictionary(grouping: sampleTransactions, by: { $0.date.asSimpleDate() })
+        }
 
     
     // Header View

@@ -16,7 +16,7 @@ struct DayTransactionsView: View {
                 Text(format(date: firstTransaction.date, format: "dd MMM yyyy"))
                     .font(.title3.bold())
                     .foregroundColor(.black)
-                    .padding(.leading, 10)  // 根据需要调整padding
+                    .padding(.leading, 10) 
                     .alignmentGuide(.leading) { _ in CGFloat(0) }
             }
             VStack(alignment: .leading) {
@@ -27,7 +27,7 @@ struct DayTransactionsView: View {
             .padding(1)
             .background()
             .cornerRadius(10)
-            .shadow(radius: 2)
+//            .shadow(radius: 1)
         }
     }
 }

@@ -28,6 +28,12 @@ extension View {
         return .zero
     }
     
+    func format(date: Date, format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: date)
+    }
+    
     func currencyString(_ value: Double, allowedDigits: Int = 2) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency

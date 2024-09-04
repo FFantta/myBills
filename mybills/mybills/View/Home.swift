@@ -21,6 +21,10 @@ struct Home: View {
                             
                             CardView(income: 4039, expense: 2389)
                             
+                            ForEach(sampleTransactions) { transaction in
+                                TransactionCardView(transaction: transaction)
+                            }
+                            
                         } header: {
                             HeaderView(size)
                         }
@@ -31,6 +35,7 @@ struct Home: View {
             }
         }
     }
+
     
     // Header View
     @ViewBuilder
@@ -86,7 +91,6 @@ struct Home: View {
     
     func headerBGOpacity(_ proxy: GeometryProxy) -> CGFloat {
         let minY = proxy.frame(in: .scrollView).minY + safeArea.top
-//        print(minY) // 为什么不输出！！！
         return minY > 0 ? 0 : (-minY / 15)
     }
     

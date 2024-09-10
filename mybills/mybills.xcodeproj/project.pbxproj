@@ -21,6 +21,8 @@
 		B2CF462E2C87934B0025C6F6 /* TransactionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF462D2C87934B0025C6F6 /* TransactionCardView.swift */; };
 		B2CF46302C886E670025C6F6 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF462F2C886E670025C6F6 /* Data+Extensions.swift */; };
 		B2CF46322C886EC70025C6F6 /* DayTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF46312C886EC70025C6F6 /* DayTransactionsView.swift */; };
+		B2CF46342C88CF7F0025C6F6 /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF46332C88CF7F0025C6F6 /* ChartModel.swift */; };
+		B2CF46362C88D23F0025C6F6 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF46352C88D23F0025C6F6 /* test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		B2CF462D2C87934B0025C6F6 /* TransactionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardView.swift; sourceTree = "<group>"; };
 		B2CF462F2C886E670025C6F6 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		B2CF46312C886EC70025C6F6 /* DayTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTransactionsView.swift; sourceTree = "<group>"; };
+		B2CF46332C88CF7F0025C6F6 /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
+		B2CF46352C88D23F0025C6F6 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 			children = (
 				B2CF461E2C7E148F0025C6F6 /* Transaction.swift */,
 				B2CF46202C7E14B30025C6F6 /* Category.swift */,
+				B2CF46332C88CF7F0025C6F6 /* ChartModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 				B2CF462A2C7E5E0B0025C6F6 /* Helpers */,
 				B2CF46232C7E15D90025C6F6 /* Home.swift */,
 				B2CF46252C7E15EA0025C6F6 /* Analysis.swift */,
+				B2CF46352C88D23F0025C6F6 /* test.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 				B28F26702C6BA159000E00FE /* CustomTabbarView.swift in Sources */,
 				B28F26632C6A5F9D000E00FE /* ContentView.swift in Sources */,
 				B2CF46292C7E48BF0025C6F6 /* View+Extensions.swift in Sources */,
+				B2CF46342C88CF7F0025C6F6 /* ChartModel.swift in Sources */,
 				B2CF462E2C87934B0025C6F6 /* TransactionCardView.swift in Sources */,
 				B2CF46242C7E15D90025C6F6 /* Home.swift in Sources */,
 				B28F26612C6A5F9D000E00FE /* mybillsApp.swift in Sources */,
@@ -219,6 +226,7 @@
 				B2CF462C2C7E5E200025C6F6 /* CardView.swift in Sources */,
 				B2CF46322C886EC70025C6F6 /* DayTransactionsView.swift in Sources */,
 				B2CF46262C7E15EA0025C6F6 /* Analysis.swift in Sources */,
+				B2CF46362C88D23F0025C6F6 /* test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,6 +31,8 @@ struct CustomTabbarView: View {
     
     @Binding var currTab: CustomTabbar
     
+    var plusAction: () -> Void  // 添加操作闭包来触发跳转
+    
     var body: some View {
         
         HStack(spacing: 0) {
@@ -52,9 +54,9 @@ struct CustomTabbarView: View {
                 
                 if item == .home {
                     Button {
-                        
+                        plusAction()    // 跳转
                     } label: {
-                        Image("tabbar_post_idle")
+                        Image("Plus")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 75, height: 75)

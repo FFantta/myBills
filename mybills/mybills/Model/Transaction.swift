@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
-struct Transaction: Identifiable {
-    let id: UUID = .init()
+@Model
+class Transaction {
     var title: String
     var comments: String?
     var amount: Double
@@ -26,32 +27,3 @@ struct Transaction: Identifiable {
     }
 }
 
-var sampleTransactions: [Transaction] = [
-    .init(title: "Magic Keyboard",
-          comments: "Apple Product",
-          amount: 129,
-          category: .expense,
-          date: Date(),
-          paymentMethod: "Credit Card"),
-    
-    .init(title: "Apple Music",
-          comments: "Subscription",
-          amount: 10.99,
-          category: .expense,
-          date: Date(),
-          paymentMethod: "Auto Pay"),
-    
-        .init(title: "iCloud+",
-              comments: "Subscription",
-              amount: 0.99,
-              category: .expense,
-              date: Date(),
-              paymentMethod: "Auto Pay"),
-        
-        .init(title: "Payment",
-              comments: "Payment Received!",
-              amount: 2499,
-              category: .income,
-              date: Date(),
-              paymentMethod: "Bank Transfer")
-    ]

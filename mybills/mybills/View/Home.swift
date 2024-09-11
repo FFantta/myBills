@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct Home: View {
     @AppStorage("userName") private var userName: String = "Fanta"
+    
+    @Query(sort: [SortDescriptor(\Transaction.date, order: .reverse)]) private var transactions: [Transaction]
+
+    
     var body: some View {
         GeometryReader {
             let size = $0.size
@@ -27,7 +32,7 @@ struct Home: View {
                                 }
                             }
                             
-                        } header: {
+                        } header: { 
                             HeaderView(size)
                         }
                     }
@@ -38,8 +43,11 @@ struct Home: View {
         }
     }
     
+//    func groupTransactionsByDate() -> [String: [Transaction]] {
+//            Dictionary(grouping: sampleTran sactions, by: { $0.date.asSimpleDate() })
+//        }
     func groupTransactionsByDate() -> [String: [Transaction]] {
-            Dictionary(grouping: sampleTransactions, by: { $0.date.asSimpleDate() })
+            return Dictionary(grouping: transactions, by: { $0.date.asSimpleDate() })
         }
 
     
@@ -68,9 +76,9 @@ struct Home: View {
             Spacer(minLength: 0)
             
             NavigationLink {
-                
+                NewExpenseView()
             } label: {
-                Image("tabbar_post_idle")
+                Image("Plus")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 50, height: 50)

@@ -15,5 +15,6 @@ struct mybillsApp: App {
 //            HomeView()
             ContentView()
         }
+        .modelContainer(for: [Transaction.self])
     }
 }

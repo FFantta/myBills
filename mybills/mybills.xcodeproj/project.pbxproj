@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B255E72D2C90D6CB00E7979D /* NewExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255E72C2C90D6CB00E7979D /* NewExpenseView.swift */; };
 		B28F26612C6A5F9D000E00FE /* mybillsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F26602C6A5F9D000E00FE /* mybillsApp.swift */; };
 		B28F26632C6A5F9D000E00FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F26622C6A5F9D000E00FE /* ContentView.swift */; };
 		B28F26652C6A5FA1000E00FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28F26642C6A5FA1000E00FE /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B255E72C2C90D6CB00E7979D /* NewExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseView.swift; sourceTree = "<group>"; };
 		B28F265D2C6A5F9D000E00FE /* mybills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mybills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28F26602C6A5F9D000E00FE /* mybillsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mybillsApp.swift; sourceTree = "<group>"; };
 		B28F26622C6A5F9D000E00FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				B2CF46232C7E15D90025C6F6 /* Home.swift */,
 				B2CF46252C7E15EA0025C6F6 /* Analysis.swift */,
 				B2CF46352C88D23F0025C6F6 /* test.swift */,
+				B255E72C2C90D6CB00E7979D /* NewExpenseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				B2CF46242C7E15D90025C6F6 /* Home.swift in Sources */,
 				B28F26612C6A5F9D000E00FE /* mybillsApp.swift in Sources */,
 				B2CF461F2C7E148F0025C6F6 /* Transaction.swift in Sources */,
+				B255E72D2C90D6CB00E7979D /* NewExpenseView.swift in Sources */,
 				B2CF46212C7E14B30025C6F6 /* Category.swift in Sources */,
 				B2CF46302C886E670025C6F6 /* Data+Extensions.swift in Sources */,
 				B2CF462C2C7E5E200025C6F6 /* CardView.swift in Sources */,

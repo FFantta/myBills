@@ -14,11 +14,11 @@ struct TransactionCardView: View {
             Text("\(String(transaction.title.prefix(1)))")
                 .font(.title)
                 .fontWeight(.semibold)
-                .foregroundColor(.blue)
+                .foregroundColor(.blue.opacity(0.7))
                 .frame(width: 45, height: 45)
                 .background(
                     Circle()
-                        .fill(Color.gray)
+                        .fill(Color.pink.opacity(0.4))
 //                        .overlay(Circle().stroke(Color.white, lineWidth: 2))
                 )
 
@@ -27,7 +27,7 @@ struct TransactionCardView: View {
                 Text(transaction.title)
                     .foregroundStyle(Color.primary)
                 
-                Text(transaction.comments!)
+                Text(transaction.comments ?? "No comments")
                     .font(.caption)
                     .foregroundStyle(Color.primary.secondary)
 //                
@@ -48,5 +48,5 @@ struct TransactionCardView: View {
 }
 
 #Preview {
-    TransactionCardView(transaction: sampleTransactions[0])
+    ContentView()
 }

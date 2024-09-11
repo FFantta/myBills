@@ -32,10 +32,16 @@ struct DayTransactionsView: View {
     }
 }
 
+//struct DayTransactionsView_Previews: PreviewProvider {
+////    static var previews: some View {
+////        DayTransactionsView(dayTransactions: sampleTransactions)
+////            .previewLayout(.sizeThatFits)
+////            .padding()
+////    }
+//}
+
 struct DayTransactionsView_Previews: PreviewProvider {
     static var previews: some View {
-        DayTransactionsView(dayTransactions: sampleTransactions)
-            .previewLayout(.sizeThatFits)
-            .padding()
+        DayTransactionsView(dayTransactions: [])
     }
 }

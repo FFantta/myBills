@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B255E72D2C90D6CB00E7979D /* NewExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255E72C2C90D6CB00E7979D /* NewExpenseView.swift */; };
+		B255E72D2C90D6CB00E7979D /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255E72C2C90D6CB00E7979D /* TransactionView.swift */; };
 		B28F26612C6A5F9D000E00FE /* mybillsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F26602C6A5F9D000E00FE /* mybillsApp.swift */; };
 		B28F26632C6A5F9D000E00FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F26622C6A5F9D000E00FE /* ContentView.swift */; };
 		B28F26652C6A5FA1000E00FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28F26642C6A5FA1000E00FE /* Assets.xcassets */; };
@@ -29,13 +29,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B255E72C2C90D6CB00E7979D /* NewExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseView.swift; sourceTree = "<group>"; };
+		B255E72C2C90D6CB00E7979D /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		B28F265D2C6A5F9D000E00FE /* mybills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mybills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28F26602C6A5F9D000E00FE /* mybillsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mybillsApp.swift; sourceTree = "<group>"; };
 		B28F26622C6A5F9D000E00FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B28F26642C6A5FA1000E00FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B28F26672C6A5FA1000E00FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B28F266F2C6BA159000E00FE /* CustomTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarView.swift; sourceTree = "<group>"; };
+		B2B2147B2CB1DD1F0057F9D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B2C99A5B2CAE0D4C0009BFB7 /* SwipeAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeAction.swift; sourceTree = "<group>"; };
 		B2C99A5D2CAF2C540009BFB7 /* StatisticPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticPeriod.swift; sourceTree = "<group>"; };
 		B2CF461E2C7E148F0025C6F6 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		B28F265F2C6A5F9D000E00FE /* mybills */ = {
 			isa = PBXGroup;
 			children = (
+				B2B2147B2CB1DD1F0057F9D6 /* Info.plist */,
 				B2CF46272C7E48970025C6F6 /* Helper */,
 				B2CF46222C7E15B70025C6F6 /* View */,
 				B2CF46192C7E13DB0025C6F6 /* Model */,
@@ -127,7 +129,7 @@
 				B2CF46232C7E15D90025C6F6 /* Home.swift */,
 				B2CF46252C7E15EA0025C6F6 /* Analysis.swift */,
 				B2CF46352C88D23F0025C6F6 /* test.swift */,
-				B255E72C2C90D6CB00E7979D /* NewExpenseView.swift */,
+				B255E72C2C90D6CB00E7979D /* TransactionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,7 +233,7 @@
 				B2CF46242C7E15D90025C6F6 /* Home.swift in Sources */,
 				B28F26612C6A5F9D000E00FE /* mybillsApp.swift in Sources */,
 				B2CF461F2C7E148F0025C6F6 /* Transaction.swift in Sources */,
-				B255E72D2C90D6CB00E7979D /* NewExpenseView.swift in Sources */,
+				B255E72D2C90D6CB00E7979D /* TransactionView.swift in Sources */,
 				B2CF46212C7E14B30025C6F6 /* Category.swift in Sources */,
 				B2C99A5E2CAF2C540009BFB7 /* StatisticPeriod.swift in Sources */,
 				B2CF46302C886E670025C6F6 /* Data+Extensions.swift in Sources */,
@@ -375,6 +377,8 @@
 				DEVELOPMENT_TEAM = B4CM6M5955;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = mybills/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME)requires permission to scan files";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -404,6 +408,8 @@
 				DEVELOPMENT_TEAM = B4CM6M5955;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = mybills/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME)requires permission to scan files";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

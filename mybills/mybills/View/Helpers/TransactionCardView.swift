@@ -40,15 +40,15 @@ struct TransactionCardView: View {
                 .lineLimit(1)
                 .hSpacing(.leading)
                 
-                Text(currencyString(transaction.amount, allowedDigits: 2))
+                Text("\(transaction.category == Category.expense.rawValue ? "-" : "+") \(String(format: "%.2f", transaction.amount))")
                     .fontWeight(.semibold)
+                    .foregroundColor(transaction.category == Category.expense.rawValue ? .red : .green)
             }
             .padding(.horizontal, 15)
             .padding(.vertical, 10)
     //        .background(.background, in: .rect(cornerRadius: 10))
         } actions: {
             Action(tint: .red, icon: "trash") {
-                // 在主线程上进行删除操作
                 DispatchQueue.main.async {
                     context.delete(transaction)
                     

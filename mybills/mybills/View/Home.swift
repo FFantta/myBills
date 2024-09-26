@@ -16,7 +16,7 @@ struct Home: View {
                     LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
                         Section {
                             
-                            CardView(income: 4039, expense: 2389)
+                            CardView(income: total(transactions, category: .income), expense: total(transactions, category: .expense))
                             
                             ForEach(Array(groupTransactionsByDate().keys.sorted()), id: \.self) { date in
                                 VStack(alignment: .leading) {
@@ -26,11 +26,11 @@ struct Home: View {
                                     
                                      ForEach(groupTransactionsByDate()[date] ?? [], id: \.id) { transaction in
                                         NavigationLink {
-                                            NewExpenseView(editTransaction: transaction)
+                                            TransactionView(editTransaction: transaction)
                                         } label: {
                                             TransactionCardView(transaction: transaction)
                                         }
-                                        .buttonStyle(.plain) // 去掉默认的按钮样式
+                                        .buttonStyle(.plain)
                                     }
                                 }
                                 .padding(.bottom, 10)
@@ -77,7 +77,7 @@ struct Home: View {
             Spacer(minLength: 0)
             
             NavigationLink {
-                NewExpenseView()
+                TransactionView()
             } label: {
                 Image("Plus")
                     .resizable()

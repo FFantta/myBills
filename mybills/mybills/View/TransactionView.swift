@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewExpenseView: View {
+struct TransactionView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     var editTransaction: Transaction?
@@ -19,6 +19,7 @@ struct NewExpenseView: View {
     @State private var date: Date = .now
     @State private var category: Category = .expense
     @State private var paymentMethods: String = ""
+    @State private var wakeUp = Date.now
     
     var body: some View {
         ScrollView(.vertical) {
@@ -39,9 +40,9 @@ struct NewExpenseView: View {
                 ))
                 .background(.background, in: .rect(cornerRadius: 10))
                 
-                CustomSection("Title", "Magic Keyboard", value: $title)
+                CustomSection("Title", " ", value: $title)
                 
-                CustomSection("Comments", "Apple Product!", value: $comments)
+                CustomSection("Comments", " ", value: $comments)
                 
                 // Amount
                 VStack(alignment: .leading, spacing: 10, content: {
@@ -55,7 +56,7 @@ struct NewExpenseView: View {
                             Text(currencySymbol)
                                 .font(.callout.bold())
                             
-                            TextField("0.8", value: $amount, formatter: numberFormatter)
+                            TextField("0.0", value: $amount, formatter: numberFormatter)
                                 .keyboardType(.decimalPad)
                         }
                         .padding(.horizontal, 15)
@@ -70,16 +71,19 @@ struct NewExpenseView: View {
                 })
                 
                 VStack(alignment: .leading, spacing: 10, content: {
-                    Text("Date")
+                    Text("Bill Date")
                         .font(.caption)
                         .foregroundStyle(.gray)
                         .hSpacing(.leading)
                     
-                    DatePicker("", selection: $date, displayedComponents: [.date])
-                        .datePickerStyle(.graphical)
-                        .padding(.horizontal, 15)
-                        .padding(.vertical, 12)
-                        .background(.background, in: .rect(cornerRadius: 10))
+//                    DatePicker("", selection: $date, displayedComponents: [.date])
+//                        .datePickerStyle(.graphical)
+//                        .padding(.horizontal, 15)
+//                        .padding(.vertical, 12)
+//                        .background(.background, in: .rect(cornerRadius: 10))
+                    DatePicker("Bill Date", selection: $date)
+                        .labelsHidden()
+                        
                 })
             }
             .padding(15)
@@ -183,6 +187,6 @@ struct NewExpenseView: View {
 
 #Preview {
     NavigationStack {
-        NewExpenseView()
+        TransactionView()
     }
 }

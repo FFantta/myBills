@@ -30,7 +30,7 @@ struct ContentView: View {
                 }
                 .ignoresSafeArea(.all, edges: .bottom)
                 .navigationDestination(isPresented: $showNewExpenseView) {
-                    NewExpenseView()
+                    TransactionView()
                 }
             }
         }

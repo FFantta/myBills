@@ -76,14 +76,14 @@ struct Home: View {
             
             Spacer(minLength: 0)
             
-            NavigationLink {
-                TransactionView()
-            } label: {
-                Image("Plus")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
-            }
+//            NavigationLink {
+//                TransactionView()
+//            } label: {
+//                Image("Plus")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 50, height: 50)
+//            }
         }
         .padding(.bottom, userName.isEmpty ? 10 : 5)
         .background {

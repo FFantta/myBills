@@ -30,6 +30,7 @@
 		B2EA66D72CA63D7B00D3C258 /* ScannerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA66D62CA63D7B00D3C258 /* ScannerContentView.swift */; };
 		B2EA66D92CA63D8B00D3C258 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA66D82CA63D8B00D3C258 /* ScannerView.swift */; };
 		B2EA66DB2CA63D9B00D3C258 /* TextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA66DA2CA63D9B00D3C258 /* TextRecognizer.swift */; };
+		B2EA66DD2CAB9DD300D3C258 /* ReceiptItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA66DC2CAB9DD300D3C258 /* ReceiptItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		B2EA66D62CA63D7B00D3C258 /* ScannerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerContentView.swift; sourceTree = "<group>"; };
 		B2EA66D82CA63D8B00D3C258 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		B2EA66DA2CA63D9B00D3C258 /* TextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognizer.swift; sourceTree = "<group>"; };
+		B2EA66DC2CAB9DD300D3C258 /* ReceiptItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				B2CF46312C886EC70025C6F6 /* DayTransactionsView.swift */,
 				B2EA66D42CA63D6400D3C258 /* ScanData.swift */,
 				B2EA66DA2CA63D9B00D3C258 /* TextRecognizer.swift */,
+				B2EA66DC2CAB9DD300D3C258 /* ReceiptItem.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				B2EA66D52CA63D6400D3C258 /* ScanData.swift in Sources */,
 				B2CF461F2C7E148F0025C6F6 /* Transaction.swift in Sources */,
 				B255E72D2C90D6CB00E7979D /* TransactionView.swift in Sources */,
+				B2EA66DD2CAB9DD300D3C258 /* ReceiptItem.swift in Sources */,
 				B2CF46212C7E14B30025C6F6 /* Category.swift in Sources */,
 				B2C99A5E2CAF2C540009BFB7 /* StatisticPeriod.swift in Sources */,
 				B2CF46302C886E670025C6F6 /* Data+Extensions.swift in Sources */,
@@ -394,7 +398,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mybills/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME)requires permission to scan files";
+				INFOPLIST_KEY_NSCameraUsageDescription = "mybills requires permission to scan files";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -425,7 +429,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mybills/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME)requires permission to scan files";
+				INFOPLIST_KEY_NSCameraUsageDescription = "mybills requires permission to scan files";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ScannerContentView: View {
+    
     @State private var showScannerSheet = false
     @State private var texts:[ScanData] = []
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -38,22 +40,22 @@ struct ScannerContentView: View {
                         .font(.title)
                 })
                     .sheet(isPresented: $showScannerSheet, content: {
-//                        makeScannerView()
+                        makeScannerView()
                 })
                 )
         }
     }
 //
-//    private func makeScannerView() -> ScannerVisionView {
-//        ScannerVisionView(completion: {
-//            textPerPage in
-//            if let outputText = textPerPage?.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines) {
-//                let newScanDate = ScannerData(content: outputText)
-//                self.texts.append(newScanDate)
-//            }
-//            self.showScannerSheet = false
-//        })
-//    }
+    private func makeScannerView() -> ScannerView {
+        ScannerView(completion: {
+            textPerPage in
+            if let outputText = textPerPage?.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines) {
+                let newScanDate = ScanData(content: outputText)
+                self.texts.append(newScanDate)
+            }
+            self.showScannerSheet = false
+        })
+    }
 }
 
 #Preview {

@@ -11,13 +11,13 @@ import SwiftData
 @Model
 class Transaction {
     var title: String
-    var comments: String?
+    var comments: String
     var amount: Double
     var category: String
     var date: Date
     var paymentMethod: String
     
-    init(title: String, comments: String? = nil, amount: Double, category: Category, date: Date, paymentMethod: String) {
+    init(title: String, comments: String, amount: Double, category: Category, date: Date, paymentMethod: String) {
         self.title = title
         self.comments = comments
         self.amount = amount
@@ -25,5 +25,11 @@ class Transaction {
         self.date = date
         self.paymentMethod = paymentMethod
     }
+    
+    @Transient
+    var rawCategory: Category? {
+        return Category.allCases.first(where: { category == $0.rawValue })
+    }
 }
+
 

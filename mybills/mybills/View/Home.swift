@@ -1,10 +1,3 @@
-//
-//  Home.swift
-//  mybills
-//
-//  Created by 俊润 Chen on 2024/8/27.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -13,10 +6,9 @@ struct Home: View {
     
     @Query(sort: [SortDescriptor(\Transaction.date, order: .reverse)]) private var transactions: [Transaction]
 
-    
     var body: some View {
-        GeometryReader {
-            let size = $0.size
+        GeometryReader { geometry in
+            let size = geometry.size
             
             NavigationStack {
                 
@@ -28,11 +20,23 @@ struct Home: View {
                             
                             ForEach(Array(groupTransactionsByDate().keys.sorted()), id: \.self) { date in
                                 VStack(alignment: .leading) {
-                                    DayTransactionsView(dayTransactions: groupTransactionsByDate()[date] ?? [])
+                                    Text(date) // 显示日期
+                                        .font(.headline)
+                                        .padding(.leading, 10)
+                                    
+                                     ForEach(groupTransactionsByDate()[date] ?? [], id: \.id) { transaction in
+                                        NavigationLink {
+                                            NewExpenseView(editTransaction: transaction)
+                                        } label: {
+                                            TransactionCardView(transaction: transaction)
+                                        }
+                                        .buttonStyle(.plain) // 去掉默认的按钮样式
+                                    }
                                 }
+                                .padding(.bottom, 10)
                             }
                             
-                        } header: { 
+                        } header: {
                             HeaderView(size)
                         }
                     }
@@ -43,14 +47,11 @@ struct Home: View {
         }
     }
     
-//    func groupTransactionsByDate() -> [String: [Transaction]] {
-//            Dictionary(grouping: sampleTran sactions, by: { $0.date.asSimpleDate() })
-//        }
+    // 按日期分组交易
     func groupTransactionsByDate() -> [String: [Transaction]] {
-            return Dictionary(grouping: transactions, by: { $0.date.asSimpleDate() })
-        }
+        return Dictionary(grouping: transactions, by: { $0.date.asSimpleDate() })
+    }
 
-    
     // Header View
     @ViewBuilder
     func HeaderView(_ size: CGSize) -> some View {
@@ -83,10 +84,8 @@ struct Home: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 50, height: 50)
             }
-            
         }
         .padding(.bottom, userName.isEmpty ? 10 : 5)
-//        .padding(10)
         .background {
             VStack(spacing: 0) {
                 Rectangle()
@@ -102,21 +101,19 @@ struct Home: View {
             .padding(.top, -(safeArea.top + 15))
         }
     }
-    
+
     func headerBGOpacity(_ proxy: GeometryProxy) -> CGFloat {
         let minY = proxy.frame(in: .scrollView).minY + safeArea.top
         return minY > 0 ? 0 : (-minY / 15)
     }
-    
+
     func headerScale(_ size: CGSize, proxy: GeometryProxy) -> CGFloat {
         let minY = proxy.frame(in: .scrollView).minY
         let screenHeight = size.height
-        
         let progress = minY / screenHeight
         let scale = (min(max(progress, 0), 1)) * 0.5
         return 1 + scale
     }
-    
 }
 
 #Preview {

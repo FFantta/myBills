@@ -10,6 +10,7 @@ import SwiftUI
 struct NewExpenseView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
+    var editTransaction: Transaction?
     
     
     @State private var title: String = ""
@@ -50,12 +51,18 @@ struct NewExpenseView: View {
                         .hSpacing(.leading)
                     
                     HStack(spacing: 15) {
-                        TextField("0.8", value: $amount, formatter: numberFormatter)
-                            .padding(.horizontal, 15)
-                            .padding(.vertical, 12)
-                            .background(.background, in: .rect(cornerRadius: 10))
-                            .frame(maxWidth: 130)
-                            .keyboardType(.decimalPad)
+                        HStack(spacing: 4) {
+                            Text(currencySymbol)
+                                .font(.callout.bold())
+                            
+                            TextField("0.8", value: $amount, formatter: numberFormatter)
+                                .keyboardType(.decimalPad)
+                        }
+                        .padding(.horizontal, 15)
+                        .padding(.vertical, 12)
+                        .background(.background, in: .rect(cornerRadius: 10))
+                        .frame(maxWidth: 130)
+//
                         
                         
                         CategoryCheckBox()
@@ -78,20 +85,42 @@ struct NewExpenseView: View {
             .padding(15)
             
         }
-        .navigationTitle("Add Transaction")
+        .navigationTitle("\(editTransaction == nil ? "Add" : "Edit") Transaction")
         .background(.gray.opacity(0.15))
         .toolbar(content: {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Save", action: save)
             }
         })
+        .onAppear(perform: {
+            if let editTransaction {
+                title = editTransaction.title
+                comments = editTransaction.comments
+                amount = editTransaction.amount
+                if let category = editTransaction.rawCategory {
+                    self.category = category
+                }
+                date = editTransaction.date
+                paymentMethods = editTransaction.paymentMethod  
+            }
+        })
         
     }
     
     func save() {
-        let transaction = Transaction(title: title, amount: amount, category: category, date: date, paymentMethod: paymentMethods)
+        if editTransaction != nil {
+            editTransaction?.title = title
+            editTransaction?.comments = comments
+            editTransaction?.amount = amount
+            editTransaction?.category = category.rawValue
+            editTransaction?.date = date
+            editTransaction?.paymentMethod = paymentMethods
+        } else {
+            let transaction = Transaction(title: title, comments: comments, amount: amount, category: category, date: date, paymentMethod: paymentMethods)
+            
+            context.insert(transaction)
+        }
         
-        context.insert(transaction)
         dismiss()
     }
 

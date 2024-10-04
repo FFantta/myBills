@@ -13,6 +13,8 @@
 		B28F26652C6A5FA1000E00FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28F26642C6A5FA1000E00FE /* Assets.xcassets */; };
 		B28F26682C6A5FA1000E00FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28F26672C6A5FA1000E00FE /* Preview Assets.xcassets */; };
 		B28F26702C6BA159000E00FE /* CustomTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F266F2C6BA159000E00FE /* CustomTabbarView.swift */; };
+		B2C99A5C2CAE0D4C0009BFB7 /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C99A5B2CAE0D4C0009BFB7 /* SwipeAction.swift */; };
+		B2C99A5E2CAF2C540009BFB7 /* StatisticPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C99A5D2CAF2C540009BFB7 /* StatisticPeriod.swift */; };
 		B2CF461F2C7E148F0025C6F6 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF461E2C7E148F0025C6F6 /* Transaction.swift */; };
 		B2CF46212C7E14B30025C6F6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF46202C7E14B30025C6F6 /* Category.swift */; };
 		B2CF46242C7E15D90025C6F6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF46232C7E15D90025C6F6 /* Home.swift */; };
@@ -34,6 +36,8 @@
 		B28F26642C6A5FA1000E00FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B28F26672C6A5FA1000E00FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B28F266F2C6BA159000E00FE /* CustomTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarView.swift; sourceTree = "<group>"; };
+		B2C99A5B2CAE0D4C0009BFB7 /* SwipeAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeAction.swift; sourceTree = "<group>"; };
+		B2C99A5D2CAF2C540009BFB7 /* StatisticPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticPeriod.swift; sourceTree = "<group>"; };
 		B2CF461E2C7E148F0025C6F6 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		B2CF46202C7E14B30025C6F6 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		B2CF46232C7E15D90025C6F6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				B2CF461E2C7E148F0025C6F6 /* Transaction.swift */,
 				B2CF46202C7E14B30025C6F6 /* Category.swift */,
 				B2CF46332C88CF7F0025C6F6 /* ChartModel.swift */,
+				B2C99A5D2CAF2C540009BFB7 /* StatisticPeriod.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 		B2CF462A2C7E5E0B0025C6F6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B2C99A5B2CAE0D4C0009BFB7 /* SwipeAction.swift */,
 				B2CF462B2C7E5E200025C6F6 /* CardView.swift */,
 				B2CF462D2C87934B0025C6F6 /* TransactionCardView.swift */,
 				B2CF46312C886EC70025C6F6 /* DayTransactionsView.swift */,
@@ -218,6 +224,7 @@
 			files = (
 				B28F26702C6BA159000E00FE /* CustomTabbarView.swift in Sources */,
 				B28F26632C6A5F9D000E00FE /* ContentView.swift in Sources */,
+				B2C99A5C2CAE0D4C0009BFB7 /* SwipeAction.swift in Sources */,
 				B2CF46292C7E48BF0025C6F6 /* View+Extensions.swift in Sources */,
 				B2CF46342C88CF7F0025C6F6 /* ChartModel.swift in Sources */,
 				B2CF462E2C87934B0025C6F6 /* TransactionCardView.swift in Sources */,
@@ -226,6 +233,7 @@
 				B2CF461F2C7E148F0025C6F6 /* Transaction.swift in Sources */,
 				B255E72D2C90D6CB00E7979D /* NewExpenseView.swift in Sources */,
 				B2CF46212C7E14B30025C6F6 /* Category.swift in Sources */,
+				B2C99A5E2CAF2C540009BFB7 /* StatisticPeriod.swift in Sources */,
 				B2CF46302C886E670025C6F6 /* Data+Extensions.swift in Sources */,
 				B2CF462C2C7E5E200025C6F6 /* CardView.swift in Sources */,
 				B2CF46322C886EC70025C6F6 /* DayTransactionsView.swift in Sources */,
@@ -364,6 +372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"mybills/Preview Content\"";
+				DEVELOPMENT_TEAM = B4CM6M5955;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -392,6 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"mybills/Preview Content\"";
+				DEVELOPMENT_TEAM = B4CM6M5955;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

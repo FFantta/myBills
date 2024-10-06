@@ -16,11 +16,11 @@ struct TransactionCardView: View {
                 Text("\(String(transaction.title.prefix(1)))")
                     .font(.title)
                     .fontWeight(.semibold)
-                    .foregroundColor(.blue.opacity(0.7))
+                    .foregroundColor(.white)
                     .frame(width: 45, height: 45)
                     .background(
                         Circle()
-                            .fill(Color.pink.opacity(0.4))
+                            .fill(.purple.opacity(0.4))
     //                        .overlay(Circle().stroke(Color.white, lineWidth: 2))
                     )
 

@@ -78,17 +78,21 @@ struct TransactionView: View {
                     DatePicker("Bill Date", selection: $date)
                         .labelsHidden()
                     
+                    Text("Copy Receipt:")
+                        .font(.caption)
+                        .foregroundStyle(.gray)
+                        .hSpacing(.leading)
+                    
                     // Scan Receipt
                     if !receiptItems.isEmpty {
-                        Text("Copy Receipt:")
-                            .font(.caption)
-                            .foregroundStyle(.gray)
-                            .hSpacing(.leading)
-                        
-                        ForEach(receiptItems) { item in
+                        ForEach($receiptItems) { $item in
                             HStack {
-                                Text(item.itemDescription)
+                                TextField("Description", text: $item.itemDescription)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                
                                 Spacer()
+                                
                                 Text(item.amount)
                             }
                             .padding(.vertical, 4)
@@ -101,6 +105,7 @@ struct TransactionView: View {
                             showScannerSheet = true
                         }
                         .padding(.top, 10)
+                        Spacer()
                         
                         Button("Scan Amount") {
                             isScanningDescription = false

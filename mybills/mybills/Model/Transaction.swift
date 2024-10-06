@@ -16,14 +16,16 @@ class Transaction {
     var category: String
     var date: Date
     var paymentMethod: String
+    var receiptItems: [ReceiptItem]
     
-    init(title: String, comments: String, amount: Double, category: Category, date: Date, paymentMethod: String) {
+    init(title: String, comments: String, amount: Double, category: Category, date: Date, paymentMethod: String, receiptItems: [ReceiptItem] = []) {
         self.title = title
         self.comments = comments
         self.amount = amount
         self.category = category.rawValue
         self.date = date
         self.paymentMethod = paymentMethod
+        self.receiptItems = receiptItems
     }
     
     @Transient
@@ -31,5 +33,6 @@ class Transaction {
         return Category.allCases.first(where: { category == $0.rawValue })
     }
 }
+
 
 

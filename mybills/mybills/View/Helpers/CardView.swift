@@ -25,7 +25,7 @@ struct CardView: View {
             RoundedRectangle(cornerRadius: 15)
                 .fill(.background)
             
-            HStack(spacing: 50) {
+            HStack(spacing: 80) {
                 
                 ZStack {
                     // 环形图
@@ -64,7 +64,7 @@ struct CardView: View {
                                     .font(.caption2)
                                     .foregroundStyle(.gray)
                                 
-                                Text(currencyString(category == .income ? income : expense, allowedDigits: 0))
+                                Text(currencyString(category == .income ? income : expense, allowedDigits: 2))
                                     .font(.callout)
                                     .fontWeight(.semibold)
                                     .foregroundStyle(.primary)
@@ -116,5 +116,5 @@ struct ChartSegment: Identifiable {
 }
 
 #Preview {
-    CardView(income: 4590, expense: 2389)
+    CardView(income: 4590.2, expense: 2389)
 }

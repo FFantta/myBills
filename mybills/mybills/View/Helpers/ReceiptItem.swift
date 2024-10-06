@@ -5,10 +5,17 @@
 //  Created by 俊润 Chen on 2024/10/1.
 //
 
-import Foundation
+import SwiftData
+import SwiftUI
 
-struct ReceiptItem: Identifiable {
+@Model
+class ReceiptItem: Identifiable {
     var id = UUID()
-    var description: String
+    var itemDescription: String
     var amount: String
+    
+    init(itemDescription: String, amount: String) {
+        self.itemDescription = itemDescription
+        self.amount = amount
+    }
 }

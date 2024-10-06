@@ -12,14 +12,16 @@ struct TransactionView: View {
     @Environment(\.dismiss) private var dismiss
     var editTransaction: Transaction?
     
-    
     @State private var title: String = ""
     @State private var comments: String = ""
     @State private var amount: Double = .zero
     @State private var date: Date = .now
     @State private var category: Category = .expense
     @State private var paymentMethods: String = ""
-    @State private var wakeUp = Date.now
+    
+    @State private var receiptItems: [ReceiptItem] = []
+    @State private var isScanningDescription = false
+    @State private var showScannerSheet = false
     
     var body: some View {
         ScrollView(.vertical) {
@@ -41,7 +43,6 @@ struct TransactionView: View {
                 .background(.background, in: .rect(cornerRadius: 10))
                 
                 CustomSection("Title", " ", value: $title)
-                
                 CustomSection("Comments", " ", value: $comments)
                 
                 // Amount
@@ -63,8 +64,6 @@ struct TransactionView: View {
                         .padding(.vertical, 12)
                         .background(.background, in: .rect(cornerRadius: 10))
                         .frame(maxWidth: 130)
-//
-                        
                         
                         CategoryCheckBox()
                     }
@@ -76,18 +75,47 @@ struct TransactionView: View {
                         .foregroundStyle(.gray)
                         .hSpacing(.leading)
                     
-//                    DatePicker("", selection: $date, displayedComponents: [.date])
-//                        .datePickerStyle(.graphical)
-//                        .padding(.horizontal, 15)
-//                        .padding(.vertical, 12)
-//                        .background(.background, in: .rect(cornerRadius: 10))
                     DatePicker("Bill Date", selection: $date)
                         .labelsHidden()
+                    
+                    // Scan Receipt
+                    if !receiptItems.isEmpty {
+                        Text("Copy Receipt:")
+                            .font(.caption)
+                            .foregroundStyle(.gray)
+                            .hSpacing(.leading)
                         
+                        ForEach(receiptItems) { item in
+                            HStack {
+                                Text(item.itemDescription)
+                                Spacer()
+                                Text(item.amount)
+                            }
+                            .padding(.vertical, 4)
+                        }
+                    }
+                    
+                    HStack(spacing: 15) {
+                        Button("Scan Description") {
+                            isScanningDescription = true
+                            showScannerSheet = true
+                        }
+                        .padding(.top, 10)
+                        
+                        Button("Scan Amount") {
+                            isScanningDescription = false
+                            showScannerSheet = true
+                        }
+                        .padding(.top, 10)
+                    }
+                    
+                    
                 })
             }
             .padding(15)
-            
+        }
+        .sheet(isPresented: $showScannerSheet) {
+            makeScannerView()
         }
         .navigationTitle("\(editTransaction == nil ? "Add" : "Edit") Transaction")
         .background(.gray.opacity(0.15))
@@ -105,23 +133,51 @@ struct TransactionView: View {
                     self.category = category
                 }
                 date = editTransaction.date
-                paymentMethods = editTransaction.paymentMethod  
+                paymentMethods = editTransaction.paymentMethod
+                receiptItems = editTransaction.receiptItems
             }
         })
-        
+    }
+    
+    // ScannerView
+    private func makeScannerView() -> ScannerView {
+        ScannerView { textPerPage in
+            if let scannedTexts = textPerPage {
+                if isScanningDescription {
+                    let newItems = scannedTexts.map { ReceiptItem(itemDescription: $0, amount: "") }
+                    receiptItems.append(contentsOf: newItems)
+                }
+                else {
+                    for (index, scannedAmount) in scannedTexts.enumerated() {
+                        if index < receiptItems.count {
+                            receiptItems[index].amount = scannedAmount
+                        }
+                    }
+                }
+            }
+            showScannerSheet = false
+        }
     }
     
     func save() {
-        if editTransaction != nil {
-            editTransaction?.title = title
-            editTransaction?.comments = comments
-            editTransaction?.amount = amount
-            editTransaction?.category = category.rawValue
-            editTransaction?.date = date
-            editTransaction?.paymentMethod = paymentMethods
+        if let editTransaction = editTransaction {
+            editTransaction.title = title
+            editTransaction.comments = comments
+            editTransaction.amount = amount
+            editTransaction.category = category.rawValue
+            editTransaction.date = date
+            editTransaction.paymentMethod = paymentMethods
+            editTransaction.receiptItems = receiptItems
         } else {
-            let transaction = Transaction(title: title, comments: comments, amount: amount, category: category, date: date, paymentMethod: paymentMethods)
-            
+            let transaction = Transaction(
+                title: title,
+                comments: comments,
+                amount: amount,
+                category: category,
+                date: date,
+                paymentMethod: paymentMethods,
+                receiptItems: receiptItems
+            )
             context.insert(transaction)
         }
         
@@ -175,12 +231,10 @@ struct TransactionView: View {
         .background(.background, in: .rect(cornerRadius: 10))
     }
     
-    
     var numberFormatter: NumberFormatter {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 2
-        
         return formatter
     }
 }

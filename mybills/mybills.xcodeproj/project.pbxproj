@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B255E72D2C90D6CB00E7979D /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255E72C2C90D6CB00E7979D /* TransactionView.swift */; };
+		B25ECEC62CB2D23100DF05C3 /* EditReceiptItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25ECEC52CB2D23100DF05C3 /* EditReceiptItemView.swift */; };
+		B25ECEC82CB2D89D00DF05C3 /* TintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25ECEC72CB2D89D00DF05C3 /* TintColor.swift */; };
 		B28F26612C6A5F9D000E00FE /* mybillsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F26602C6A5F9D000E00FE /* mybillsApp.swift */; };
 		B28F26632C6A5F9D000E00FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F26622C6A5F9D000E00FE /* ContentView.swift */; };
 		B28F26652C6A5FA1000E00FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28F26642C6A5FA1000E00FE /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		B255E72C2C90D6CB00E7979D /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		B25ECEC52CB2D23100DF05C3 /* EditReceiptItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReceiptItemView.swift; sourceTree = "<group>"; };
+		B25ECEC72CB2D89D00DF05C3 /* TintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintColor.swift; sourceTree = "<group>"; };
 		B28F265D2C6A5F9D000E00FE /* mybills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mybills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28F26602C6A5F9D000E00FE /* mybillsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mybillsApp.swift; sourceTree = "<group>"; };
 		B28F26622C6A5F9D000E00FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 				B2CF46202C7E14B30025C6F6 /* Category.swift */,
 				B2CF46332C88CF7F0025C6F6 /* ChartModel.swift */,
 				B2C99A5D2CAF2C540009BFB7 /* StatisticPeriod.swift */,
+				B25ECEC72CB2D89D00DF05C3 /* TintColor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 				B255E72C2C90D6CB00E7979D /* TransactionView.swift */,
 				B2EA66D62CA63D7B00D3C258 /* ScannerContentView.swift */,
 				B2EA66D82CA63D8B00D3C258 /* ScannerView.swift */,
+				B25ECEC52CB2D23100DF05C3 /* EditReceiptItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,6 +260,8 @@
 				B255E72D2C90D6CB00E7979D /* TransactionView.swift in Sources */,
 				B2EA66DD2CAB9DD300D3C258 /* ReceiptItem.swift in Sources */,
 				B2CF46212C7E14B30025C6F6 /* Category.swift in Sources */,
+				B25ECEC62CB2D23100DF05C3 /* EditReceiptItemView.swift in Sources */,
+				B25ECEC82CB2D89D00DF05C3 /* TintColor.swift in Sources */,
 				B2C99A5E2CAF2C540009BFB7 /* StatisticPeriod.swift in Sources */,
 				B2CF46302C886E670025C6F6 /* Data+Extensions.swift in Sources */,
 				B2CF462C2C7E5E200025C6F6 /* CardView.swift in Sources */,

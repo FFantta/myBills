@@ -20,7 +20,7 @@ struct Home: View {
                             
                             ForEach(Array(groupTransactionsByDate().keys.sorted()), id: \.self) { date in
                                 VStack(alignment: .leading) {
-                                    Text(date) // 显示日期
+                                    Text(date) 
                                         .font(.headline)
                                         .padding(.leading, 10)
                                     
@@ -47,12 +47,10 @@ struct Home: View {
         }
     }
     
-    // 按日期分组交易
     func groupTransactionsByDate() -> [String: [Transaction]] {
         return Dictionary(grouping: transactions, by: { $0.date.asSimpleDate() })
     }
 
-    // Header View
     @ViewBuilder
     func HeaderView(_ size: CGSize) -> some View {
         HStack(spacing: 10) {
@@ -68,7 +66,6 @@ struct Home: View {
                 
             })
             
-            // 下拉动画
             .visualEffect { content, geometryProxy in
                 content
                     .scaleEffect(headerScale(size, proxy: geometryProxy), anchor: .topLeading)
@@ -76,14 +73,6 @@ struct Home: View {
             
             Spacer(minLength: 0)
             
-//            NavigationLink {
-//                TransactionView()
-//            } label: {
-//                Image("Plus")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 50, height: 50)
-//            }
         }
         .padding(.bottom, userName.isEmpty ? 10 : 5)
         .background {

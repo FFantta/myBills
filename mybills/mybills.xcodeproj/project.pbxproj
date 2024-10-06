@@ -26,6 +26,10 @@
 		B2CF46322C886EC70025C6F6 /* DayTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF46312C886EC70025C6F6 /* DayTransactionsView.swift */; };
 		B2CF46342C88CF7F0025C6F6 /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF46332C88CF7F0025C6F6 /* ChartModel.swift */; };
 		B2CF46362C88D23F0025C6F6 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF46352C88D23F0025C6F6 /* test.swift */; };
+		B2EA66D52CA63D6400D3C258 /* ScanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA66D42CA63D6400D3C258 /* ScanData.swift */; };
+		B2EA66D72CA63D7B00D3C258 /* ScannerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA66D62CA63D7B00D3C258 /* ScannerContentView.swift */; };
+		B2EA66D92CA63D8B00D3C258 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA66D82CA63D8B00D3C258 /* ScannerView.swift */; };
+		B2EA66DB2CA63D9B00D3C258 /* TextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA66DA2CA63D9B00D3C258 /* TextRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		B2CF46312C886EC70025C6F6 /* DayTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTransactionsView.swift; sourceTree = "<group>"; };
 		B2CF46332C88CF7F0025C6F6 /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
 		B2CF46352C88D23F0025C6F6 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		B2EA66D42CA63D6400D3C258 /* ScanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanData.swift; sourceTree = "<group>"; };
+		B2EA66D62CA63D7B00D3C258 /* ScannerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerContentView.swift; sourceTree = "<group>"; };
+		B2EA66D82CA63D8B00D3C258 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		B2EA66DA2CA63D9B00D3C258 /* TextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,8 @@
 				B2CF46252C7E15EA0025C6F6 /* Analysis.swift */,
 				B2CF46352C88D23F0025C6F6 /* test.swift */,
 				B255E72C2C90D6CB00E7979D /* TransactionView.swift */,
+				B2EA66D62CA63D7B00D3C258 /* ScannerContentView.swift */,
+				B2EA66D82CA63D8B00D3C258 /* ScannerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,6 +160,8 @@
 				B2CF462B2C7E5E200025C6F6 /* CardView.swift */,
 				B2CF462D2C87934B0025C6F6 /* TransactionCardView.swift */,
 				B2CF46312C886EC70025C6F6 /* DayTransactionsView.swift */,
+				B2EA66D42CA63D6400D3C258 /* ScanData.swift */,
+				B2EA66DA2CA63D9B00D3C258 /* TextRecognizer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -231,7 +243,10 @@
 				B2CF46342C88CF7F0025C6F6 /* ChartModel.swift in Sources */,
 				B2CF462E2C87934B0025C6F6 /* TransactionCardView.swift in Sources */,
 				B2CF46242C7E15D90025C6F6 /* Home.swift in Sources */,
+				B2EA66D72CA63D7B00D3C258 /* ScannerContentView.swift in Sources */,
 				B28F26612C6A5F9D000E00FE /* mybillsApp.swift in Sources */,
+				B2EA66D92CA63D8B00D3C258 /* ScannerView.swift in Sources */,
+				B2EA66D52CA63D6400D3C258 /* ScanData.swift in Sources */,
 				B2CF461F2C7E148F0025C6F6 /* Transaction.swift in Sources */,
 				B255E72D2C90D6CB00E7979D /* TransactionView.swift in Sources */,
 				B2CF46212C7E14B30025C6F6 /* Category.swift in Sources */,
@@ -240,6 +255,7 @@
 				B2CF462C2C7E5E200025C6F6 /* CardView.swift in Sources */,
 				B2CF46322C886EC70025C6F6 /* DayTransactionsView.swift in Sources */,
 				B2CF46262C7E15EA0025C6F6 /* Analysis.swift in Sources */,
+				B2EA66DB2CA63D9B00D3C258 /* TextRecognizer.swift in Sources */,
 				B2CF46362C88D23F0025C6F6 /* test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

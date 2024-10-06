@@ -13,7 +13,8 @@ struct mybillsApp: App {
     var body: some Scene {
         WindowGroup {
 //            HomeView()
-            ContentView()
+//            ContentView()
+            ScannerContentView()
         }
         .modelContainer(for: [Transaction.self])
     }

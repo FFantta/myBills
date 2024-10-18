@@ -85,11 +85,9 @@ struct TransactionView: View {
                     
                     // Scan Receipt
                     if !receiptItems.isEmpty {
-                        ForEach($receiptItems) { $item in
+                        ForEach(receiptItems) { item in
                             HStack {
-                                TextField("Description", text: $item.itemDescription)
-                                    .textFieldStyle(.roundedBorder)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                Text(item.itemDescription)
                                 
                                 Spacer()
                                 

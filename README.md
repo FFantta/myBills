@@ -31,3 +31,19 @@ Since the app is not published on the App Store, follow the steps below to run i
 
 ## Permissions
 In order to use the receipt scanning feature, the app will require access to the camera.
+
+## Screen Shot
+
+<div style="display: flex; justify-content: space-around; gap: 20px;">
+
+  <div style="text-align: center; margin-right: 20px;">
+    <img src="./images/Home.PNG" alt="Home page" width="300"/>
+    <p><strong>[Home Page]</strong></p>
+  </div>
+
+  <div style="text-align: center;">
+    <img src="./images/Transaction.PNG" alt="Transaction page" width="300"/>
+    <p><strong>[Transaction Page]</strong></p>
+  </div>
+
+</div>
